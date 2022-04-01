@@ -57,6 +57,22 @@ export const deleteReview = createAsyncThunk(
   }
 );
 
+export const updateReview = createAsyncThunk(
+  "reviews/update",
+  async (reviewData, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await reviewService.updateReview(reviewData, token);
+    } catch (err) {
+      const message =
+        (err.response && err.response.data && err.response.data.message) ||
+        err.message ||
+        err.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 export const reviewSlice = createSlice({
   name: "review",
   initialState,
@@ -103,6 +119,21 @@ export const reviewSlice = createSlice({
         );
       })
       .addCase(deleteReview.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(updateReview.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateReview.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.reviews = state.reviews.map((review) =>
+          review._id === action.payload._id ? action.payload : review
+        );
+      })
+      .addCase(updateReview.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

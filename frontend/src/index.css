@@ -137,3 +137,35 @@ p {
   margin-bottom: 0.5rem;
   width: 100%;
 }
+
+/* Edit review form */
+
+.edit-review {
+  padding: 1rem;
+  width: 400px;
+  text-align: left;
+  margin: 20px;
+  height: 650px;
+}
+
+.edit-review .edit-restaurant  {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.edit-review .edit-rating  {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.edit-review .edit-location  {
+  margin-top: 15px;
+}
+
+.edit-review .edit-food-specs  {
+  margin-top: 70px;
+}
+
+.edit-review .close-button {
+  margin-top: 5px;
+}

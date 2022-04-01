@@ -9,26 +9,7 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import CloseIcon from "@mui/icons-material/Close";
-
-const typeOfFood = [
-  "Afghan",
-  "Burgers",
-  "Chinese",
-  "Fried Chicken",
-  "Hot Dogs",
-  "Indian",
-  "Korean",
-  "Other",
-  "Pizza",
-  "Pasta",
-  "Pakistani",
-  "Rice",
-  "Salad",
-  "Shawarma",
-  "Sushi",
-  "Soup",
-  "Tacos",
-];
+import foodTypes from "../data/foodTypes";
 
 function ReviewForm() {
   const [review, setReview] = useState({
@@ -160,7 +141,7 @@ function ReviewForm() {
                   placeholder="Type of Food"
                   required
                 >
-                  {typeOfFood.map((food) => (
+                  {foodTypes.map((food) => (
                     <MenuItem value={food}>{food}</MenuItem>
                   ))}
                 </Select>
