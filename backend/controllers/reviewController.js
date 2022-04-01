@@ -19,11 +19,12 @@ const setReview = asyncHandler(async (req, res) => {
 
   const review = await Review.create({
     user: req.user.id,
-    headline: req.body.headline,
+    restaurant: req.body.restaurant,
     rating: req.body.rating,
     content: req.body.content,
     location: req.body.location,
     diet: req.body.diet,
+    typeOfFood: req.body.typeOfFood,
   });
 
   res.json(review);
@@ -53,11 +54,12 @@ const updateReview = asyncHandler(async (req, res) => {
   const updatedReview = await Review.findByIdAndUpdate(
     reviewId,
     {
-      headline: req.body.headline,
+      restaurant: req.body.restaurant,
       rating: req.body.rating,
       content: req.body.content,
       location: req.body.location,
       diet: req.body.diet,
+      typeOfFood: req.body.typeOfFood,
     },
     { new: true }
   );

@@ -1,7 +1,10 @@
-import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
+import Button from "@mui/material/Button";
+import LogoutIcon from "@mui/icons-material/Logout";
+import LoginIcon from "@mui/icons-material/Login";
+import PersonIcon from "@mui/icons-material/Person";
 
 function Header() {
   const navigate = useNavigate();
@@ -11,37 +14,40 @@ function Header() {
   const handleLogout = () => {
     dispatch(logout());
     dispatch(reset());
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">GoalSetter</Link>
+        <Link to="/" className="header-text">
+          <h1>ChewReview</h1>
+        </Link>
       </div>
-      <ul>
+      <div className="header-actions">
         {user ? (
-          <li>
-            <button onClick={handleLogout}>
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
+          <Button
+            onClick={handleLogout}
+            startIcon={<LogoutIcon />}
+            className="header-button"
+          >
+            Logout
+          </Button>
         ) : (
           <>
-            {" "}
-            <li>
-              <Link to="/login">
-                <FaSignInAlt /> Login
+            <Button startIcon={<LoginIcon />} className="header-button">
+              <Link to="/login" className="header-text">
+                Login
               </Link>
-            </li>
-            <li>
-              <Link to="/register">
-                <FaUser /> Register
+            </Button>
+            <Button startIcon={<PersonIcon />} className="header-button">
+              <Link to="/register" className="header-text">
+                Register
               </Link>
-            </li>
+            </Button>
           </>
         )}
-      </ul>
+      </div>
     </header>
   );
 }

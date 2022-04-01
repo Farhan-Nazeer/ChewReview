@@ -7,9 +7,9 @@ const reviewSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
-    headline: {
+    restaurant: {
       type: String,
-      required: [true, "Please add a headline"],
+      required: [true, "Please add a restaurant name"],
     },
     rating: {
       type: mongoose.Decimal128,
@@ -27,6 +27,10 @@ const reviewSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a dietary restrictions"],
     },
+    typeOfFood: {
+      type: String,
+      required: [true, "Please add a food type"],
+    }
   },
   {
     timestamps: true,

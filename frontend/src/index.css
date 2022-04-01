@@ -1,7 +1,139 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+
 .container {
   text-align: center;
 }
 
+/* Header styles */
+
 .header {
+  background-color: #FD5D5D;
+  color: white;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: 5px 20px 5px 20px;
+}
+
+.header-actions {
+  margin-right: 30px;
+}
+
+.header-text {
+  color: white;
+  text-decoration: none;
+}
+
+.header-actions .header-button {
+  color: white;
+  text-decoration: none;
+}
+
+/* ChewReview form */
+
+.form-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.review-form {
+  width: 35%;
+}
+
+.form-top-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 1rem 0;
+}
+
+.form-top-row > * {
+  width: 32%;
+}
+
+.form-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 1rem 0;
+}
+
+.form-bottom-row > * {
+  width: 49%;
+}
+
+.review-form .select-dropdown {
+  text-align: left;
+}
+
+.review-form .close-button {
+  display: flex;
+  margin-left: auto;
+}
+
+/* Review dashboard */
+.reviews-container {
+  display: flex;
+  width: 80%;
+  margin-left: 10%;
+  flex-wrap: wrap;
+}
+
+/* Review item */
+
+.review {
+  /* border: 1px solid black; */
+  padding: 1rem;
+  width: 400px;
+  text-align: left;
+  margin: 20px;
+  height: 450px;
+}
+
+.review-row-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-row-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.review-row-content {
+  height: 40px;
+}
+
+.review-row-food-specs {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 1rem 0;
+}
+
+.review-row-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+#star-icon {
+  vertical-align: -5px;
+}
+
+.img-responsive {
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
