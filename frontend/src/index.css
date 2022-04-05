@@ -11,6 +11,9 @@ p {
   margin: 0;
 }
 
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 .container {
   text-align: center;
@@ -79,17 +82,52 @@ p {
   text-align: left;
 }
 
-.review-form .close-button {
+.review-form .top-row {
   display: flex;
-  margin-left: auto;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.add-review-text{
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.review-form .review-submit-button {
+  margin-bottom: 30px;
 }
 
 /* Review dashboard */
+
 .reviews-container {
   display: flex;
   width: 80%;
   margin-left: 10%;
   flex-wrap: wrap;
+}
+
+.greeting {
+  font-weight: bold;
+}
+
+.review-form .write-review-button {
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#search-bar {
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 20px;
+  height: 40px;
+  width: 350px;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+#search-bar:hover {
+  box-shadow: 0 0 5px rgb(180, 180, 180);
 }
 
 /* Review item */
@@ -168,4 +206,38 @@ p {
 
 .edit-review .close-button {
   margin-top: 5px;
+}
+
+/* Login form */
+
+.login-div {
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 10px;
+  background-color: white;
+  margin: auto;
+  margin-top: 5%;
+  padding: 2rem;
+  width: 300px;
+}
+
+.login-form-group {
+  margin: 20px 0px;
+}
+
+.register-redirect {
+  text-align: left;
+}
+
+.register-link {
+  color: #3773d4;
+  text-decoration: none;
+}
+
+.login-img {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.loading-spinner {
+  margin-top: 50px;
 }

@@ -61,12 +61,12 @@ function ReviewForm() {
           </Button>
         ) : (
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="top-row">
+              <p className="add-review-text">Add a ChewReview</p>
               <Button
                 variant="outlined"
                 startIcon={<CloseIcon />}
                 color="error"
-                className="close-button"
                 onClick={() => setIsClicked(false)}
               >
                 Close
@@ -157,7 +157,7 @@ function ReviewForm() {
                 required
               />
             </div>
-            <Button type="submit" variant="contained" size="large" fullWidth>
+            <Button type="submit" variant="contained" size="large" className="review-submit-button" fullWidth>
               Submit
             </Button>
           </form>

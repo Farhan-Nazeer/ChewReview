@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { register, reset } from "../features/auth/authSlice";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -25,7 +29,7 @@ function Register() {
     }
 
     if (isSuccess || user) {
-      navigate('/');
+      navigate("/");
     }
 
     dispatch(reset());
@@ -59,64 +63,76 @@ function Register() {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return  <CircularProgress className="loading-spinner"/>;
   }
 
   return (
-    <div>
-      <h1>
+    <div className="login-div">
+      <h1 className="login-img">
         <FaUser /> Register
       </h1>
-      <p>Create an account</p>
 
-      <section className="form">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              name="name"
-              value={formData.name}
-              placeholder="Enter your name"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              value={formData.email}
-              placeholder="Enter your email"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              value={formData.password}
-              placeholder="Enter your password"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              placeholder="Confirm your password"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group"></div>
-          <button type="submit" className="btn btn-block">
+      <form onSubmit={handleSubmit}>
+        <div className="login-form-group">
+          <TextField
+            label="Name"
+            type="text"
+            variant="outlined"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            size="small"
+            fullWidth
+          />
+        </div>
+        <div className="login-form-group">
+          <TextField
+            label="Email"
+            type="email"
+            variant="outlined"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            size="small"
+            fullWidth
+          />
+        </div>
+        <div className="login-form-group">
+          <TextField
+            label="Password"
+            type="password"
+            variant="outlined"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            size="small"
+            fullWidth
+          />
+        </div>
+        <div className="login-form-group">
+          <TextField
+            label="Password"
+            type="password"
+            variant="outlined"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            size="small"
+            fullWidth
+          />
+        </div>
+        <div className="login-form-group">
+        <Button type="submit" variant="contained" size="large" fullWidth>
             Register
-          </button>
-        </form>
-      </section>
+        </Button>
+        </div>
+        <p className="register-redirect">
+          Already have an account?{" "}
+          <Link to="/login" className="register-link">
+            Login
+          </Link>
+        </p>
+      </form>
     </div>
   );
 }

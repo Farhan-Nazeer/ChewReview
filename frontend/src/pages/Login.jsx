@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, reset } from "../features/auth/authSlice";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -23,19 +27,19 @@ function Login() {
     }
 
     if (isSuccess || user) {
-      navigate('/');
+      navigate("/");
     }
 
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
 
     setFormData((prevValue) => ({
       ...prevValue,
       [name]: value,
-    }))
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -46,49 +50,57 @@ function Login() {
     const userData = {
       email,
       password,
-    }
+    };
 
-    dispatch(login(userData))
+    dispatch(login(userData));
   };
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return  <CircularProgress className="loading-spinner"/>;
   }
 
-
   return (
-    <div>
-      <h1>
+    <div className="login-div">
+      <h1 className="login-img">
         <FaSignInAlt /> Login
       </h1>
-      <p>Login to your account</p>
-
-      <section className="form">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              value={formData.email}
-              placeholder="Enter your email"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              value={formData.password}
-              placeholder="Enter your password"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group"></div>
-          <button type="submit" className="btn btn-block">Login</button>
-        </form>
-      </section>
+      <form onSubmit={handleSubmit}>
+        <div className="login-form-group">
+          <TextField
+            label="Email"
+            type="email"
+            variant="outlined"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            size="small"
+            fullWidth
+          />
+        </div>
+        <div className="login-form-group">
+          <TextField
+            label="Password"
+            type="password"
+            variant="outlined"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            size="small"
+            fullWidth
+          />
+        </div>
+        <div className="login-form-group">
+          <Button type="submit" variant="contained" size="large" fullWidth>
+            Login
+          </Button>
+        </div>
+        <p className="register-redirect">
+          Don't have an account?{" "}
+          <Link to="/register" className="register-link">
+            Sign up
+          </Link>
+        </p>
+      </form>
     </div>
   );
 }
