@@ -38,6 +38,13 @@ function ReviewItem(props) {
     }));
   };
 
+  const handleDelete = () => {
+    const result = window.confirm("Are you sure you want to delete this review?");
+    if (result) {
+      dispatch(deleteReview(props.review._id));
+    }
+  }
+
   return (
     <div>
       {isUpdated ? (
@@ -209,7 +216,7 @@ function ReviewItem(props) {
               size="small"
               startIcon={<DeleteForeverIcon />}
               color="error"
-              onClick={() => dispatch(deleteReview(props.review._id))}
+              onClick={handleDelete}
             >
               Delete
             </Button>
