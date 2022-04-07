@@ -142,7 +142,7 @@ function ReviewForm() {
                   required
                 >
                   {foodTypes.map((food) => (
-                    <MenuItem value={food}>{food}</MenuItem>
+                    <MenuItem key={food} value={food}>{food}</MenuItem>
                   ))}
                 </Select>
               </FormControl>

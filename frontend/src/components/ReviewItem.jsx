@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { deleteReview, updateReview } from "../features/reviews/reviewSlice";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import Button from "@mui/material/Button";
@@ -39,7 +40,7 @@ function ReviewItem(props) {
   };
 
   const handleDelete = () => {
-    const result = window.confirm("Are you sure you want to delete this review?");
+    const result = window.confirm("Clicking OK will permanently delete this review");
     if (result) {
       dispatch(deleteReview(props.review._id));
     }
@@ -152,7 +153,7 @@ function ReviewItem(props) {
                 size="small"
               >
                 {foodTypes.map((food) => (
-                  <MenuItem value={food}>{food}</MenuItem>
+                  <MenuItem key={food} value={food}>{food}</MenuItem>
                 ))}
               </Select>
             </FormControl>
@@ -176,11 +177,13 @@ function ReviewItem(props) {
         </div>
       ) : (
         <div className="review">
+          <Link to={`/details/${props.review._id}`}>
           <img
             className="img-responsive"
             src={require(`../images/${props.review.typeOfFood}.jpg`)}
             alt="food"
           />
+          </Link>
 
           <div className="review-row-header">
             <h3>{props.review.restaurant}</h3>
