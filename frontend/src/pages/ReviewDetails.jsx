@@ -10,6 +10,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import Timeline from "../components/TimelineGraphic";
 import SuggestionItem from "../components/SuggestionItem";
+import Fade from "@mui/material/Fade";
 
 function ReviewDetails() {
   const params = useParams();
@@ -38,6 +39,7 @@ function ReviewDetails() {
   return (
     <div className="form-container">
       {reviewToDisplay.length > 0 ? (
+        <Fade in={true}>
         <div className="details-container">
           <div className="display-img-background">
             <img
@@ -100,6 +102,7 @@ function ReviewDetails() {
           ) : null}
         </div>
         </div>
+        </Fade>
       ) : (
         <Navigate to="/" />
       )}
