@@ -43,6 +43,7 @@ function Filter() {
           name="filter"
           value={filter}
           onChange={handleChange}
+          size="small"
         >
           <MenuItem value="new">Newest</MenuItem>
           <MenuItem value="old">Oldest</MenuItem>

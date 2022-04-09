@@ -7,7 +7,7 @@ import { reset, getReviewsReversed } from "../features/reviews/reviewSlice";
 import CircularProgress from "@mui/material/CircularProgress";
 import SearchBar from "../components/SearchBar";
 import Filter from "../components/Filter";
-import Slide from '@mui/material/Slide';
+import Slide from "@mui/material/Slide";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -43,20 +43,22 @@ function Dashboard() {
       {/* <p className="greeting">Hello, {user && user.name}!</p> */}
 
       <ReviewForm />
-      <h2>Reviews Dashboard</h2>
-      <SearchBar />
-      <Filter />
+      <h1 className="dashboard-title">{user && user.name}'s Dashboard</h1>
+      <div className="search-narrowers">
+        <SearchBar />
+        <Filter />
+      </div>
 
       <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-      {reviews.length > 0 ? (
-        <div className="reviews-container">
-          {reviews.map((review) => (
-            <ReviewItem key={review._id} review={review} />
-          ))}
-        </div>
-      ) : (
-        <h3>You do not have any reviews</h3>
-      )}
+        {reviews.length > 0 ? (
+          <div className="reviews-container">
+            {reviews.map((review) => (
+              <ReviewItem key={review._id} review={review} />
+            ))}
+          </div>
+        ) : (
+          <h3>You do not have any reviews</h3>
+        )}
       </Slide>
     </>
   );

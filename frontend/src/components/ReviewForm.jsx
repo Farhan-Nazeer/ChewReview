@@ -11,6 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import CloseIcon from "@mui/icons-material/Close";
 import foodTypes from "../data/foodTypes";
 import Grow from "@mui/material/Grow";
+import SpeedDial from "@mui/material/SpeedDial";
 
 function ReviewForm() {
   const [review, setReview] = useState({
@@ -51,15 +52,12 @@ function ReviewForm() {
     <div className="form-container">
       <div className="review-form">
         {!isClicked ? (
-          <Button
-            size="large"
-            variant="outlined"
+          <SpeedDial
+            ariaLabel="SpeedDial basic example"
+            icon={<DriveFileRenameOutlineIcon />}
             className="write-review-button"
-            startIcon={<DriveFileRenameOutlineIcon />}
             onClick={() => setIsClicked(true)}
-          >
-            Write a ChewReview...
-          </Button>
+          ></SpeedDial>
         ) : (
           <Grow in={isClicked} {...(isClicked ? { timeout: 500 } : {})}>
             <form onSubmit={handleSubmit}>
