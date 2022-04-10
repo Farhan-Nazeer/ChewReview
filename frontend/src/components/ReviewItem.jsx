@@ -60,59 +60,55 @@ function ReviewItem(props) {
           />
           <div className="review-row-header">
             <TextField
-              id="outlined-basic"
-              label="Restaurant Name"
               className="edit-restaurant"
-              variant="outlined"
+              label="Restaurant Name"
               name="restaurant"
-              value={updatedReview.restaurant}
               onChange={handleChange}
               placeholder="i.e Red Lobster"
-              required
               size="small"
+              variant="outlined"
+              value={updatedReview.restaurant}
+              required
             />
             <TextField
-              type="number"
-              id="outlined-basic"
               className="edit-rating"
               label="Rating"
-              variant="outlined"
               name="rating"
-              value={updatedReview.rating}
               onChange={handleChange}
               placeholder="i.e 8.5"
-              required
               size="small"
+              type="number"
+              variant="outlined"
+              value={updatedReview.rating}
+              required
             />
           </div>
           <div className="review-row-details">
             <TextField
-              id="outlined-basic"
-              label="Restaurant Location"
               className="edit-location"
-              fullWidth
-              variant="outlined"
+              label="Restaurant Location"
               name="location"
-              value={updatedReview.location}
               onChange={handleChange}
               placeholder="i.e 4120 Yonge St."
-              required
               size="small"
+              variant="outlined"
+              value={updatedReview.location}
+              fullWidth
+              required
             />
           </div>
           <div className="review-row-content">
             <TextField
-              multiline
-              rows={4}
-              fullWidth
-              id="outlined-basic"
               label="Enter your review here"
-              variant="outlined"
               name="content"
-              value={updatedReview.content}
               onChange={handleChange}
-              required
+              rows={4}
               size="small"
+              variant="outlined"
+              value={updatedReview.content}
+              fullWidth
+              multiline
+              required
             />
           </div>
           <div className="review-row-food-specs">
@@ -121,16 +117,15 @@ function ReviewItem(props) {
                 Diet
               </InputLabel>
               <Select
-                labelId="diet-label"
-                id="outlined-basic"
                 className="select-dropdown edit-food-specs"
+                labelId="diet-label"
                 label="Diet"
-                variant="outlined"
                 name="diet"
-                value={updatedReview.diet}
                 onChange={handleChange}
-                required
                 size="small"
+                variant="outlined"
+                value={updatedReview.diet}
+                required
               >
                 <MenuItem value="No special diet">No special diet</MenuItem>
                 <MenuItem value="Vegetarian">Vegetarian</MenuItem>
@@ -143,17 +138,16 @@ function ReviewItem(props) {
                 Type Of Food
               </InputLabel>
               <Select
-                labelId="typeOfFood-label"
-                id="outlined-basic"
-                label="Type of Food"
                 className="select-dropdown edit-food-specs"
-                variant="outlined"
+                labelId="typeOfFood-label"
+                label="Type of Food"
                 name="typeOfFood"
-                value={updatedReview.typeOfFood}
                 onChange={handleChange}
                 placeholder="Type of Food"
-                required
                 size="small"
+                variant="outlined"
+                value={updatedReview.typeOfFood}
+                required
               >
                 {foodTypes.map((food) => (
                   <MenuItem key={food} value={food}>{food}</MenuItem>
@@ -169,11 +163,11 @@ function ReviewItem(props) {
             Update
           </Button>
           <Button
-            variant="contained"
-            color="error"
-            fullWidth
             className="close-button"
+            color="error"
             onClick={() => setIsUpdated(false)}
+            variant="contained"
+            fullWidth
           >
             Close
           </Button>
@@ -219,9 +213,9 @@ function ReviewItem(props) {
               Edit
             </Button>
             <Button
+              color="error"
               size="small"
               startIcon={<DeleteForeverIcon />}
-              color="error"
               onClick={handleDelete}
             >
               Delete

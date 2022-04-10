@@ -68,26 +68,26 @@ function Login() {
         <div className="login-form-group">
           <TextField
             label="Email"
-            type="email"
-            variant="outlined"
             name="email"
-            value={formData.email}
             onChange={handleChange}
             size="small"
+            type="email"
+            variant="outlined"
+            value={formData.email}
             fullWidth
           />
         </div>
         <div className="login-form-group">
           <TextField
+            className="bottom-form-button"
             label="Password"
-            type="password"
-            variant="outlined"
             name="password"
-            value={formData.password}
             onChange={handleChange}
             size="small"
+            type="password"
+            variant="outlined"
+            value={formData.password}
             fullWidth
-            className="bottom-form-button"
           />
         </div>
         <div className="login-form-group">

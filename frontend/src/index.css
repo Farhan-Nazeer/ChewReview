@@ -1,6 +1,13 @@
+
+/* Elements */
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+}
+
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h3 {
@@ -11,22 +18,14 @@ p {
   margin: 0;
 }
 
-h2 {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.container {
-  text-align: center;
-}
-
-/* Header styles */
+/* Header */
 
 .header {
+  align-items: center;
   background-color: #FD5D5D;
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .logo {
@@ -55,7 +54,56 @@ h2 {
   vertical-align: -6px;
 }
 
-/* ChewReview form */
+/* Dashboard body */
+
+.container {
+  text-align: center;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 5%;
+  margin-bottom: 7rem;
+  width: 90%;
+}
+
+.greeting {
+  font-weight: bold;
+}
+
+.review-form .write-review-button {
+  bottom: 0;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  position: fixed;
+  right: 0;
+}
+
+#search-bar {
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 20px;
+  height: 40px;
+  margin: 40px auto 20px;
+  width: 350px;
+}
+
+#search-bar:hover {
+  box-shadow: 0 0 5px rgb(180, 180, 180);
+}
+
+.search-narrowers {
+  margin-bottom: 30px;
+}
+
+.dashboard-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+/* ChewReview insert form */
 
 .form-container {
   display: flex;
@@ -63,8 +111,8 @@ h2 {
 }
 
 .review-form {
-  width: 500px;
   margin-top: 2rem;
+  width: 500px;
 }
 
 .form-top-row {
@@ -106,63 +154,16 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* Review dashboard */
-
-.reviews-container {
-  display: flex;
-  width: 90%;
-  margin-left: 5%;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 7rem;
-}
-
-.greeting {
-  font-weight: bold;
-}
-
-.review-form .write-review-button {
-  margin-right: 30px;
-  margin-bottom: 30px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-#search-bar {
-  border: 1px solid rgb(185, 185, 185);
-  border-radius: 20px;
-  height: 40px;
-  width: 350px;
-  margin: auto;
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-
-#search-bar:hover {
-  box-shadow: 0 0 5px rgb(180, 180, 180);
-}
-
-.search-narrowers {
-  margin-bottom: 30px;
-}
-
-.dashboard-title {
-  font-weight: bold;
-  margin-top: 50px;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-/* Review item */
+/* ChewReview item */
 
 .review {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  padding: 1rem 1rem 2.3rem 1rem;
-  width: 400px;
-  text-align: left;
-  margin: 20px;
+  border-radius: 10px;
   height: 450px;
-  border-radius: 10px
+  margin: 20px;
+  padding: 1rem 1rem 2.3rem 1rem;
+  text-align: left;
+  width: 400px;
 }
 
 .review:hover {
@@ -201,23 +202,23 @@ h2 {
 }
 
 .img-responsive {
+  height: 275px;
   margin-bottom: 0.5rem;
   width: 100%;
-  height: 275px;
 }
 
 .card-icons {
   vertical-align: -4px;
 }
 
-/* Edit review form */
+/* Edit ChewReview form */
 
 .edit-review {
-  padding: 1rem;
-  width: 400px;
-  text-align: left;
-  margin: 20px;
   height: 650px;
+  margin: 20px;
+  padding: 1rem;
+  text-align: left;
+  width: 400px;
 }
 
 .edit-review .edit-restaurant  {
@@ -242,15 +243,76 @@ h2 {
   margin-top: 5px;
 }
 
-/* Login and register form */
+/* Details page */
+
+.details-container {
+  width: 100%;
+}
+
+.review-body-content {
+  margin-left: 70px;
+  margin-right: 70px;
+  text-align: left;
+}
+
+.img-display {
+  max-width: 500px;
+  max-height: 350px;
+  vertical-align: middle;
+}
+
+.display-img-background {
+  background-color: rgb(25, 25, 25);
+  margin-bottom: 50px;
+}
+
+.details-location {
+  margin-top: 1px;
+}
+
+.details-location .details-chip {
+  margin-right: 1rem;
+  padding: 1.1rem 0.2rem;
+}
+
+.details-timeline {
+  margin-top: 1%;
+  text-align: left;
+  transform: scale(0.95);
+  width: 175px;
+}
+
+.details-timeline li:before {
+  content: none;
+}
+
+.details-review {
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.reviews-container-details {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+}
+
+.details-similar {
+  margin-top: 50px;
+}
+
+.details-suggestion {
+  margin-left: 50px;
+}
+
+/* Login and register forms */
 
 .login-div {
+  background-color: white;
   border: 1px solid rgb(185, 185, 185);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: white;
-  margin: auto;
-  margin-top: 100px;
+  margin: 100px auto;
   padding: 2rem;
   width: 300px;
 }
@@ -281,87 +343,59 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Details page */
-
-.details-container {
-  width: 100%;
-}
-
-.review-body-content {
-  text-align: left;
-  margin-left: 70px;
-}
-
-.img-display {
-  max-width: 500px;
-  max-height: 350px;
-  vertical-align: middle;
-}
-
-.display-img-background {
-  background-color: rgb(25, 25, 25);
-  margin-bottom: 50px;
-}
-
-.details-location {
-  margin-top: 1px;
-}
-
-.details-location .details-chip {
-  padding: 1.1rem 0.2rem;
-  margin-right: 1rem;
-}
-
-.details-timeline {
-  text-align: left;
-  margin-top: 1%;
-  width: 175px;
-  transform: scale(0.95);
-}
-
-.details-timeline li:before {
-  content: none;
-}
-
-.details-review {
-  margin-top: 30px;
-  font-size: 18px;
-}
-
-.reviews-container-details {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 0;
-}
-
-.details-similar {
-  margin-top: 4%;
-}
-
-.details-suggestion {
-  margin-left: 4%;
-}
-
 /* Media queries */
-
-@media (max-width: 475px) { 
-  body {
-    min-width: 450px;
-  }
-}
 
 @media (max-width: 650px) {
   .review-form {
     width: 80%;
   }
 
-  /* .img-display {
-    max-width: 350px;
-    max-height: 200px;
+  .img-display {
+    max-width: 400px;
+    max-height: 250px;
     vertical-align: middle;
-  } */
+  }
 
-  .details-container {
-    transform: scale(0.7);
+  .review-body-content  {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .details-suggestion {
+    transform: scale(0.9);
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 475px) { 
+  .review {
+    transform: scale(0.8)
+  }
+
+  .review-body-content  {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+  }
+
+  .details-timeline {
+    margin-top: 1%;
+    margin-left: 28%;
+    transform: scale(0.95);
+    width: 175px;
+  }
+
+  .details-suggestion {
+    margin-left: -5%;
+  }
+  
+  .edit-review {
+    transform: scale(0.8)
+  }
+}
+
+@media (max-width: 410px) { 
+  body {
+    min-width: 400px;
   }
 }

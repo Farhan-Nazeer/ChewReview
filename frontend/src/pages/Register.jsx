@@ -76,50 +76,50 @@ function Register() {
         <div className="login-form-group">
           <TextField
             label="Name"
-            type="text"
-            variant="outlined"
             name="name"
-            value={formData.name}
             onChange={handleChange}
             size="small"
+            type="text"
+            variant="outlined"
+            value={formData.name}
             fullWidth
           />
         </div>
         <div className="login-form-group">
           <TextField
             label="Email"
-            type="email"
-            variant="outlined"
             name="email"
-            value={formData.email}
             onChange={handleChange}
             size="small"
+            type="email"
+            variant="outlined"
+            value={formData.email}
             fullWidth
           />
         </div>
         <div className="login-form-group">
           <TextField
             label="Password"
-            type="password"
-            variant="outlined"
             name="password"
-            value={formData.password}
             onChange={handleChange}
             size="small"
+            type="password"
+            variant="outlined"
+            value={formData.password}
             fullWidth
           />
         </div>
         <div className="login-form-group">
           <TextField
+            className="bottom-form-button"
             label="Confirm password"
-            type="password"
-            variant="outlined"
             name="confirmPassword"
-            value={formData.confirmPassword}
             onChange={handleChange}
             size="small"
+            type="password"
+            variant="outlined"
+            value={formData.confirmPassword}
             fullWidth
-            className="bottom-form-button"
           />
         </div>
         <div className="login-form-group">

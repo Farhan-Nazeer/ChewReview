@@ -40,8 +40,6 @@ function Dashboard() {
 
   return (
     <>
-      {/* <p className="greeting">Hello, {user && user.name}!</p> */}
-
       <ReviewForm />
       <h1 className="dashboard-title">{user && user.name}'s Dashboard</h1>
       <div className="search-narrowers">
@@ -57,7 +55,7 @@ function Dashboard() {
             ))}
           </div>
         ) : (
-          <h3>You do not have any reviews</h3>
+          <h3>No reviews</h3>
         )}
       </Slide>
     </>

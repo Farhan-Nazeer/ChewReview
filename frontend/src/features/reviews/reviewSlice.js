@@ -139,8 +139,7 @@ export const reviewSlice = createSlice({
       .addCase(createReview.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.reviews.push(action.payload);
-        // state.reviews = [...state.reviews + action.payload]
+        state.reviews.unshift(action.payload);
       })
       .addCase(createReview.rejected, (state, action) => {
         state.isLoading = false;

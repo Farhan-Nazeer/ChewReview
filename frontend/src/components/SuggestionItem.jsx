@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 
 function SuggestionItem(props) {
@@ -40,6 +41,7 @@ function SuggestionItem(props) {
             <p>{props.review.typeOfFood}</p>
           </div>
           <div className="review-row-actions">
+          <MoreHorizIcon />          
           </div>
         </div>
     </div>

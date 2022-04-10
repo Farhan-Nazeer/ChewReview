@@ -48,6 +48,15 @@ function ReviewForm() {
     }));
   };
 
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+    setIsClicked(true);
+  }
+
   return (
     <div className="form-container">
       <div className="review-form">
@@ -56,7 +65,7 @@ function ReviewForm() {
             ariaLabel="SpeedDial basic example"
             icon={<DriveFileRenameOutlineIcon />}
             className="write-review-button"
-            onClick={() => setIsClicked(true)}
+            onClick={handleClick}
           ></SpeedDial>
         ) : (
           <Grow in={isClicked} {...(isClicked ? { timeout: 500 } : {})}>
@@ -64,9 +73,9 @@ function ReviewForm() {
               <div className="top-row">
                 <p className="add-review-text">Add a ChewReview</p>
                 <Button
+                  color="error"
                   variant="outlined"
                   startIcon={<CloseIcon />}
-                  color="error"
                   onClick={() => setIsClicked(false)}
                 >
                   Close
@@ -74,37 +83,34 @@ function ReviewForm() {
               </div>
               <div className="form-top-row">
                 <TextField
-                  id="outlined-basic"
-                  label="Restaurant Name"
-                  variant="outlined"
+                  label="Eatery Name"
                   name="restaurant"
-                  value={review.restaurant}
                   onChange={handleChange}
                   placeholder="i.e Red Lobster"
+                  variant="outlined"
+                  value={review.restaurant}
                   required
                 />
                 <TextField
-                  type="number"
-                  id="outlined-basic"
                   label="Rating"
-                  variant="outlined"
                   name="rating"
-                  value={review.rating}
                   onChange={handleChange}
                   placeholder="i.e 8.5"
+                  type="number"
+                  variant="outlined"
+                  value={review.rating}
                   required
                 />
                 <FormControl>
                   <InputLabel id="diet-label">Diet</InputLabel>
                   <Select
-                    labelId="diet-label"
-                    id="outlined-basic"
                     className="select-dropdown"
+                    labelId="diet-label"
                     label="Diet"
-                    variant="outlined"
                     name="diet"
-                    value={review.diet}
                     onChange={handleChange}
+                    variant="outlined"
+                    value={review.diet}
                     required
                   >
                     <MenuItem value="No special diet">No special diet</MenuItem>
@@ -115,29 +121,27 @@ function ReviewForm() {
                 </FormControl>
               </div>
               <TextField
-                multiline
+                label="Enter your review here"
+                name="content"
+                onChange={handleChange}
+                variant="outlined"
+                value={review.content}
                 rows={4}
                 fullWidth
-                id="outlined-basic"
-                label="Enter your review here"
-                variant="outlined"
-                name="content"
-                value={review.content}
-                onChange={handleChange}
+                multiline
                 required
               />
               <div className="form-bottom-row">
                 <FormControl>
                   <InputLabel id="typeOfFood-label">Type Of Food</InputLabel>
                   <Select
-                    labelId="typeOfFood-label"
-                    id="outlined-basic"
-                    label="Type of Food"
                     className="select-dropdown"
-                    variant="outlined"
+                    label="Type of Food"
+                    labelId="typeOfFood-label"
                     name="typeOfFood"
-                    value={review.typeOfFood}
                     onChange={handleChange}
+                    variant="outlined"
+                    value={review.typeOfFood}
                     placeholder="Type of Food"
                     required
                   >
@@ -149,13 +153,12 @@ function ReviewForm() {
                   </Select>
                 </FormControl>
                 <TextField
-                  id="outlined-basic"
                   label="Restaurant Location"
-                  variant="outlined"
                   name="location"
-                  value={review.location}
                   onChange={handleChange}
                   placeholder="i.e 4120 Yonge St."
+                  variant="outlined"
+                  value={review.location}
                   required
                 />
               </div>

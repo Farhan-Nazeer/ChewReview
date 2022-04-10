@@ -11,6 +11,8 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 import Timeline from "../components/TimelineGraphic";
 import SuggestionItem from "../components/SuggestionItem";
 import Fade from "@mui/material/Fade";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+
 
 function ReviewDetails() {
   const params = useParams();
@@ -18,23 +20,14 @@ function ReviewDetails() {
   const { reviews } = useSelector((state) => state.reviews);
 
   const [reviewToDisplay, setReviewToDisplay] = useState(reviews);
-  const [similarReviews, setSimilarReviews] = useState(reviews);
+  const [similarReviews] = useState(reviews);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setReviewToDisplay((prevValue) =>
       prevValue.filter((review) => review._id === params.id)
     );
   }, [params.id]);
-
-  useEffect(() => {
-    setSimilarReviews((prevValue) =>
-      prevValue.filter(
-        (review) =>
-          review.typeOfFood === reviewToDisplay[0].typeOfFood &&
-          review._id !== params.id
-      )
-    );
-  }, [params.id, reviewToDisplay]);
 
   return (
     <div className="form-container">
@@ -88,17 +81,21 @@ function ReviewDetails() {
                 <p>{reviewToDisplay[0].content}</p>
               </div>
             </div>
+            <MoreHorizIcon fontSize="large" className="details-similar"/><MoreHorizIcon fontSize="large" className="details-similar"/>
 
             {similarReviews.length > 0 ? (
+              <div className="review-body-content">
               <div className="details-review">
                 <h2 className="details-similar">Similar eateries:</h2>
+              </div>
               </div>
             ) : null}
             <div className="details-suggestion">
               {similarReviews.length > 0 ? (
                 <div className="reviews-container-details">
                   {similarReviews.map((review) => (
-                    <SuggestionItem key={review._id} review={review} />
+                    review.typeOfFood === reviewToDisplay[0].typeOfFood && review._id !== reviewToDisplay[0]._id ? 
+                    <SuggestionItem key={review._id} review={review} /> : null
                   ))}
                 </div>
               ) : null}
