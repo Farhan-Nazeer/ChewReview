@@ -1,5 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { getReviews, getReviewsReversed, getReviewsHighestRated, getReviewsLowestRated } from "../features/reviews/reviewSlice";
+import {
+  getReviews,
+  getReviewsReversed,
+  getReviewsHighestRated,
+  getReviewsLowestRated,
+} from "../features/reviews/reviewSlice";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";

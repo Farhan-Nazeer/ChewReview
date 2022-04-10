@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonIcon from "@mui/icons-material/Person";
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 
 function Header() {
   const navigate = useNavigate();
@@ -22,7 +22,11 @@ function Header() {
     <header className="header">
       <div className="logo">
         <Link to="/" className="header-text">
-          <h1> <RestaurantMenuIcon fontSize="large" className="logo-icon"/> ChewReview</h1>
+          <h1>
+            {" "}
+            <RestaurantMenuIcon fontSize="large" className="logo-icon" />{" "}
+            ChewReview
+          </h1>
         </Link>
       </div>
       <div className="header-actions">

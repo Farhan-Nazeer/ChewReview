@@ -52,10 +52,10 @@ function ReviewForm() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
     setIsClicked(true);
-  }
+  };
 
   return (
     <div className="form-container">

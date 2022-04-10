@@ -128,7 +128,9 @@ export const reviewSlice = createSlice({
   reducers: {
     reset: (state) => initialState,
     findMatchingReviews: (state, action) => {
-      state.reviews = state.reviews.filter((review) => review.restaurant.toLowerCase().includes(action.payload.toLowerCase()));      
+      state.reviews = state.reviews.filter((review) =>
+        review.restaurant.toLowerCase().includes(action.payload.toLowerCase())
+      );
     },
   },
   extraReducers: (builder) => {
@@ -210,7 +212,9 @@ export const reviewSlice = createSlice({
       .addCase(getReviewsHighestRated.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.reviews = action.payload.sort((a, b) => b.rating.$numberDecimal - a.rating.$numberDecimal);
+        state.reviews = action.payload.sort(
+          (a, b) => b.rating.$numberDecimal - a.rating.$numberDecimal
+        );
         state.filter = "high";
       })
       .addCase(getReviewsHighestRated.rejected, (state, action) => {
@@ -224,7 +228,9 @@ export const reviewSlice = createSlice({
       .addCase(getReviewsLowestRated.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.reviews = action.payload.sort((a, b) => a.rating.$numberDecimal-b.rating.$numberDecimal);
+        state.reviews = action.payload.sort(
+          (a, b) => a.rating.$numberDecimal - b.rating.$numberDecimal
+        );
         state.filter = "low";
       })
       .addCase(getReviewsLowestRated.rejected, (state, action) => {

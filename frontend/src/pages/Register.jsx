@@ -6,7 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { register, reset } from "../features/auth/authSlice";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -63,7 +63,7 @@ function Register() {
   };
 
   if (isLoading) {
-    return  <CircularProgress className="loading-spinner"/>;
+    return <CircularProgress className="loading-spinner" />;
   }
 
   return (
@@ -123,9 +123,9 @@ function Register() {
           />
         </div>
         <div className="login-form-group">
-        <Button type="submit" variant="contained" size="large" fullWidth>
+          <Button type="submit" variant="contained" size="large" fullWidth>
             Register
-        </Button>
+          </Button>
         </div>
         <p className="register-redirect">
           Already have an account?{" "}

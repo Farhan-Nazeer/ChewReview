@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getReviews, findMatchingReviews } from "../features/reviews/reviewSlice";
-import InputBase from '@mui/material/InputBase';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+import {
+  getReviews,
+  findMatchingReviews,
+} from "../features/reviews/reviewSlice";
+import InputBase from "@mui/material/InputBase";
+import IconButton from "@mui/material/IconButton";
+import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 
 function SearchBar() {
@@ -18,13 +21,13 @@ function SearchBar() {
 
   const handlePress = (e) => {
     const { key } = e;
-    if (key === "Enter"){
+    if (key === "Enter") {
       submitSearch();
     }
   };
 
   const submitSearch = () => {
-    dispatch(findMatchingReviews(searchBar))
+    dispatch(findMatchingReviews(searchBar));
   };
 
   const resetSearch = () => {
@@ -34,19 +37,19 @@ function SearchBar() {
 
   return (
     <div id="search-bar">
-    <IconButton onClick={submitSearch} sx={{ mb: 0.4 }}>
-      <SearchIcon />
-    </IconButton>
-    <InputBase
-      placeholder="Search ChewReviews..."
-      value={searchBar}
-      onChange={handleChangeSearchBar}
-      onKeyDown={handlePress}
-    />
-    <IconButton onClick={resetSearch} sx={{ mb: 0.5, ml: 9 }}>
-      <CloseIcon />
-    </IconButton>
-  </div>
+      <IconButton onClick={submitSearch} sx={{ mb: 0.4 }}>
+        <SearchIcon />
+      </IconButton>
+      <InputBase
+        placeholder="Search ChewReviews..."
+        value={searchBar}
+        onChange={handleChangeSearchBar}
+        onKeyDown={handlePress}
+      />
+      <IconButton onClick={resetSearch} sx={{ mb: 0.5, ml: 9 }}>
+        <CloseIcon />
+      </IconButton>
+    </div>
   );
 }
 

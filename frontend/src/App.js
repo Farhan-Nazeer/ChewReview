@@ -12,10 +12,10 @@ function App() {
         <div className="container">
           <Header />
           <Routes>
-            <Route path='/' element={<Dashboard />} />
-            <Route path='/details/:id' element={<ReviewDetails />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/details/:id" element={<ReviewDetails />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </div>
       </Router>

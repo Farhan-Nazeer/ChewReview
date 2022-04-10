@@ -43,7 +43,11 @@ const updateReview = async (reviewData, token) => {
     },
   };
 
-  const response = await axios.put("/api/reviews/" + reviewData.id, reviewData, config);
+  const response = await axios.put(
+    "/api/reviews/" + reviewData.id,
+    reviewData,
+    config
+  );
 
   return response.data;
 };

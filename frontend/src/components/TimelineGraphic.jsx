@@ -6,7 +6,6 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 function TimelineGraphic(props) {
-
   const dateC = new Date(props.created);
   const createdDate = dateC.toString().substring(4, 15);
 
@@ -15,7 +14,7 @@ function TimelineGraphic(props) {
 
   return (
     <div>
-      <Timeline >
+      <Timeline>
         <TimelineItem>
           <TimelineSeparator>
             <TimelineDot />

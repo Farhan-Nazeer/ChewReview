@@ -5,8 +5,8 @@ import { deleteReview, updateReview } from "../features/reviews/reviewSlice";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import Button from "@mui/material/Button";
 import EditIcon from "@mui/icons-material/Edit";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
@@ -14,7 +14,6 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import foodTypes from "../data/foodTypes";
-
 
 function ReviewItem(props) {
   const [isUpdated, setIsUpdated] = useState(false);
@@ -43,11 +42,13 @@ function ReviewItem(props) {
   };
 
   const handleDelete = () => {
-    const result = window.confirm("Clicking OK will permanently delete this review");
+    const result = window.confirm(
+      "Clicking OK will permanently delete this review"
+    );
     if (result) {
       dispatch(deleteReview(props.review._id));
     }
-  }
+  };
 
   return (
     <div>
@@ -150,7 +151,9 @@ function ReviewItem(props) {
                 required
               >
                 {foodTypes.map((food) => (
-                  <MenuItem key={food} value={food}>{food}</MenuItem>
+                  <MenuItem key={food} value={food}>
+                    {food}
+                  </MenuItem>
                 ))}
               </Select>
             </FormControl>
@@ -175,11 +178,11 @@ function ReviewItem(props) {
       ) : (
         <div className="review">
           <Link to={`/details/${props.review._id}`}>
-          <img
-            className="img-responsive"
-            src={require(`../images/${props.review.typeOfFood}.jpg`)}
-            alt="food"
-          />
+            <img
+              className="img-responsive"
+              src={require(`../images/${props.review.typeOfFood}.jpg`)}
+              alt="food"
+            />
           </Link>
 
           <div className="review-row-header">
@@ -190,8 +193,22 @@ function ReviewItem(props) {
             </h3>
           </div>
           <div className="review-row-details">
-            <p><CalendarMonthIcon fontSize="small" color="action" className="card-icons"/> {displayDate}</p>
-            <p><LocationOnIcon fontSize="small" color="action" className="card-icons"/> {props.review.location}</p>
+            <p>
+              <CalendarMonthIcon
+                fontSize="small"
+                color="action"
+                className="card-icons"
+              />{" "}
+              {displayDate}
+            </p>
+            <p>
+              <LocationOnIcon
+                fontSize="small"
+                color="action"
+                className="card-icons"
+              />{" "}
+              {props.review.location}
+            </p>
           </div>
           <div className="review-row-content">
             <p>

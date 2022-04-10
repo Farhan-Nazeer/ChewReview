@@ -11,8 +11,7 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 import Timeline from "../components/TimelineGraphic";
 import SuggestionItem from "../components/SuggestionItem";
 import Fade from "@mui/material/Fade";
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 function ReviewDetails() {
   const params = useParams();
@@ -42,9 +41,7 @@ function ReviewDetails() {
               />
             </div>
             <div className="review-body-content">
-              <h1>
-                {reviewToDisplay[0].restaurant}
-              </h1>
+              <h1>{reviewToDisplay[0].restaurant}</h1>
               <Rating
                 name="text-feedback"
                 value={reviewToDisplay[0].rating.$numberDecimal / 2}
@@ -52,12 +49,12 @@ function ReviewDetails() {
                 precision={0.1}
                 emptyIcon={<StarIcon fontSize="inherit" />}
               />
-            <div className="details-timeline">
-              <Timeline
-                created={reviewToDisplay[0].createdAt}
-                updated={reviewToDisplay[0].updatedAt}
-              />
-            </div>
+              <div className="details-timeline">
+                <Timeline
+                  created={reviewToDisplay[0].createdAt}
+                  updated={reviewToDisplay[0].updatedAt}
+                />
+              </div>
               <div className="details-location">
                 <Chip
                   icon={<RestaurantIcon />}
@@ -81,22 +78,25 @@ function ReviewDetails() {
                 <p>{reviewToDisplay[0].content}</p>
               </div>
             </div>
-            <MoreHorizIcon fontSize="large" className="details-similar"/><MoreHorizIcon fontSize="large" className="details-similar"/>
+            <MoreHorizIcon fontSize="large" className="details-similar" />
+            <MoreHorizIcon fontSize="large" className="details-similar" />
 
             {similarReviews.length > 0 ? (
               <div className="review-body-content">
-              <div className="details-review">
-                <h2 className="details-similar">Similar eateries:</h2>
-              </div>
+                <div className="details-review">
+                  <h2 className="details-similar">Similar eateries:</h2>
+                </div>
               </div>
             ) : null}
             <div className="details-suggestion">
               {similarReviews.length > 0 ? (
                 <div className="reviews-container-details">
-                  {similarReviews.map((review) => (
-                    review.typeOfFood === reviewToDisplay[0].typeOfFood && review._id !== reviewToDisplay[0]._id ? 
-                    <SuggestionItem key={review._id} review={review} /> : null
-                  ))}
+                  {similarReviews.map((review) =>
+                    review.typeOfFood === reviewToDisplay[0].typeOfFood &&
+                    review._id !== reviewToDisplay[0]._id ? (
+                      <SuggestionItem key={review._id} review={review} />
+                    ) : null
+                  )}
                 </div>
               ) : null}
             </div>

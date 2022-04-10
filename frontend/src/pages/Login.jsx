@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { login, reset } from "../features/auth/authSlice";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -56,7 +56,7 @@ function Login() {
   };
 
   if (isLoading) {
-    return  <CircularProgress className="loading-spinner"/>;
+    return <CircularProgress className="loading-spinner" />;
   }
 
   return (
