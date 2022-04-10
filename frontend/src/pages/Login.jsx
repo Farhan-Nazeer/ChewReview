@@ -87,6 +87,7 @@ function Login() {
             onChange={handleChange}
             size="small"
             fullWidth
+            className="bottom-form-button"
           />
         </div>
         <div className="login-form-group">

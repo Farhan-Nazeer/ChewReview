@@ -19,7 +19,7 @@ function ReviewForm() {
     rating: "",
     content: "",
     location: "",
-    diet: "None",
+    diet: "No special diet",
     typeOfFood: "",
   });
   const [isClicked, setIsClicked] = useState(false);
@@ -34,7 +34,7 @@ function ReviewForm() {
       rating: "",
       content: "",
       location: "",
-      diet: "None",
+      diet: "No special diet",
       typeOfFood: "",
     });
   };
@@ -107,7 +107,7 @@ function ReviewForm() {
                     onChange={handleChange}
                     required
                   >
-                    <MenuItem value="None">None</MenuItem>
+                    <MenuItem value="No special diet">No special diet</MenuItem>
                     <MenuItem value="Vegetarian">Vegetarian</MenuItem>
                     <MenuItem value="Vegan">Vegan</MenuItem>
                     <MenuItem value="Halal">Halal</MenuItem>

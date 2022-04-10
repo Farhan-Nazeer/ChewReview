@@ -42,6 +42,10 @@ h2 {
   text-decoration: none;
 }
 
+.header-text h1 {
+  margin: 14px 0;
+}
+
 .header-actions .header-button {
   color: white;
   text-decoration: none;
@@ -59,7 +63,8 @@ h2 {
 }
 
 .review-form {
-  width: 35%;
+  width: 500px;
+  margin-top: 2rem;
 }
 
 .form-top-row {
@@ -109,6 +114,7 @@ h2 {
   margin-left: 5%;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 7rem;
 }
 
 .greeting {
@@ -119,7 +125,6 @@ h2 {
   margin-right: 30px;
   margin-bottom: 30px;
   position: fixed;
-  transform: scale(1.1);
   bottom: 0;
   right: 0;
 }
@@ -144,7 +149,7 @@ h2 {
 
 .dashboard-title {
   font-weight: bold;
-  margin-top: 80px;
+  margin-top: 50px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -152,7 +157,7 @@ h2 {
 
 .review {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  padding: 1rem 1rem 2rem 1rem;
+  padding: 1rem 1rem 2.3rem 1rem;
   width: 400px;
   text-align: left;
   margin: 20px;
@@ -173,6 +178,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+  margin-top: 2px;
 }
 
 .review-row-content {
@@ -198,6 +204,10 @@ h2 {
   margin-bottom: 0.5rem;
   width: 100%;
   height: 275px;
+}
+
+.card-icons {
+  vertical-align: -4px;
 }
 
 /* Edit review form */
@@ -232,14 +242,15 @@ h2 {
   margin-top: 5px;
 }
 
-/* Login form */
+/* Login and register form */
 
 .login-div {
   border: 1px solid rgb(185, 185, 185);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: white;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 100px;
   padding: 2rem;
   width: 300px;
 }
@@ -266,15 +277,24 @@ h2 {
   margin-top: 50px;
 }
 
+.login-form-group .bottom-form-button {
+  margin-bottom: 20px;
+}
+
 /* Details page */
 
 .details-container {
   width: 100%;
 }
 
+.review-body-content {
+  text-align: left;
+  margin-left: 70px;
+}
+
 .img-display {
-  width: 25%;
-  height: 25%;
+  max-width: 500px;
+  max-height: 350px;
   vertical-align: middle;
 }
 
@@ -283,21 +303,8 @@ h2 {
   margin-bottom: 50px;
 }
 
-.details-header {
-  text-align: left;
-  margin-left: 6%;
-  margin-top: 4%;
-}
-
-.details-rating {
-  text-align: left;
-  margin-left: 6%;
-}
-
 .details-location {
-  text-align: left;
-  margin-left: 6%;
-  margin-top: 1%;
+  margin-top: 1px;
 }
 
 .details-location .details-chip {
@@ -308,15 +315,17 @@ h2 {
 .details-timeline {
   text-align: left;
   margin-top: 1%;
-  width: 300px;
-  margin-left: 0;
+  width: 175px;
+  transform: scale(0.95);
+}
+
+.details-timeline li:before {
+  content: none;
 }
 
 .details-review {
-  text-align: left;
-  margin-top: 1%;
-  margin-left: 6%;
-  margin-top: 2%;
+  margin-top: 30px;
+  font-size: 18px;
 }
 
 .reviews-container-details {
@@ -331,4 +340,28 @@ h2 {
 
 .details-suggestion {
   margin-left: 4%;
+}
+
+/* Media queries */
+
+@media (max-width: 475px) { 
+  body {
+    min-width: 450px;
+  }
+}
+
+@media (max-width: 650px) {
+  .review-form {
+    width: 80%;
+  }
+
+  /* .img-display {
+    max-width: 350px;
+    max-height: 200px;
+    vertical-align: middle;
+  } */
+
+  .details-container {
+    transform: scale(0.7);
+  }
 }

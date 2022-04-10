@@ -11,12 +11,6 @@ const getReviews = asyncHandler(async (req, res) => {
 
 // POST: /api/reviews
 const setReview = asyncHandler(async (req, res) => {
-  // Dont think this next bit is needed because front-end will have form validation, but that's technically true for everything
-  // if (!req.body.text) {
-  //   res.status(400);
-  //   throw new Error("Please add a text field");
-  // }
-
   const review = await Review.create({
     user: req.user.id,
     restaurant: req.body.restaurant,
@@ -40,7 +34,6 @@ const updateReview = asyncHandler(async (req, res) => {
     throw new Error("Review not found");
   }
 
-  // Next code block seems useless, don't need to check user and don't need to query for user to use id again
   if (!req.user) {
     res.status(401);
     throw new Error("User not found");
@@ -76,7 +69,6 @@ const deleteReview = asyncHandler(async (req, res) => {
     throw new Error("Review not found");
   }
 
-  // Next code block seem useless, don't need to check user and don't need to query for user to use id again
   if (!req.user) {
     res.status(401);
     throw new Error("User not found");

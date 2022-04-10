@@ -5,6 +5,8 @@ import { deleteReview, updateReview } from "../features/reviews/reviewSlice";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import Button from "@mui/material/Button";
 import EditIcon from "@mui/icons-material/Edit";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
@@ -12,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import foodTypes from "../data/foodTypes";
+
 
 function ReviewItem(props) {
   const [isUpdated, setIsUpdated] = useState(false);
@@ -129,7 +132,7 @@ function ReviewItem(props) {
                 required
                 size="small"
               >
-                <MenuItem value="None">None</MenuItem>
+                <MenuItem value="No special diet">No special diet</MenuItem>
                 <MenuItem value="Vegetarian">Vegetarian</MenuItem>
                 <MenuItem value="Vegan">Vegan</MenuItem>
                 <MenuItem value="Halal">Halal</MenuItem>
@@ -193,8 +196,8 @@ function ReviewItem(props) {
             </h3>
           </div>
           <div className="review-row-details">
-            <p>{displayDate}</p>
-            <p>{props.review.location}</p>
+            <p><CalendarMonthIcon fontSize="small" color="action" className="card-icons"/> {displayDate}</p>
+            <p><LocationOnIcon fontSize="small" color="action" className="card-icons"/> {props.review.location}</p>
           </div>
           <div className="review-row-content">
             <p>

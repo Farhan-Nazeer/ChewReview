@@ -12,6 +12,6 @@ router.route("/").get(protect, getReviews).post(protect, setReview);
 
 router.route("/:id").put(protect, updateReview).delete(protect, deleteReview);
 
-// Add patch route here as well
+// Add patch route
 
 module.exports = router;

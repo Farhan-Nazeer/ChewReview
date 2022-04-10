@@ -111,7 +111,7 @@ function Register() {
         </div>
         <div className="login-form-group">
           <TextField
-            label="Password"
+            label="Confirm password"
             type="password"
             variant="outlined"
             name="confirmPassword"
@@ -119,6 +119,7 @@ function Register() {
             onChange={handleChange}
             size="small"
             fullWidth
+            className="bottom-form-button"
           />
         </div>
         <div className="login-form-group">
