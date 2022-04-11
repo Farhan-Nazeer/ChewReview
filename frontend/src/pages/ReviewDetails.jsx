@@ -78,28 +78,32 @@ function ReviewDetails() {
                 <p>{reviewToDisplay[0].content}</p>
               </div>
             </div>
-            <MoreHorizIcon fontSize="large" className="details-similar" />
-            <MoreHorizIcon fontSize="large" className="details-similar" />
 
-            {similarReviews.length > 0 ? (
-              <div className="review-body-content">
-                <div className="details-review">
-                  <h2 className="details-similar">Similar eateries:</h2>
+            {similarReviews.some(
+              (e) =>
+                e._id !== reviewToDisplay[0]._id &&
+                e.typeOfFood === reviewToDisplay[0].typeOfFood
+            ) ? (
+              <div>
+                <MoreHorizIcon fontSize="large" className="details-similar" />
+                <MoreHorizIcon fontSize="large" className="details-similar" />
+                <div className="review-body-content">
+                  <div className="details-review">
+                    <h2 className="details-similar">Similar eateries:</h2>
+                  </div>
+                </div>
+                <div className="details-suggestion">
+                  <div className="reviews-container-details">
+                    {similarReviews.map((review) =>
+                      review.typeOfFood === reviewToDisplay[0].typeOfFood &&
+                      review._id !== reviewToDisplay[0]._id ? (
+                        <SuggestionItem key={review._id} review={review} />
+                      ) : null
+                    )}
+                  </div>
                 </div>
               </div>
             ) : null}
-            <div className="details-suggestion">
-              {similarReviews.length > 0 ? (
-                <div className="reviews-container-details">
-                  {similarReviews.map((review) =>
-                    review.typeOfFood === reviewToDisplay[0].typeOfFood &&
-                    review._id !== reviewToDisplay[0]._id ? (
-                      <SuggestionItem key={review._id} review={review} />
-                    ) : null
-                  )}
-                </div>
-              ) : null}
-            </div>
           </div>
         </Fade>
       ) : (
