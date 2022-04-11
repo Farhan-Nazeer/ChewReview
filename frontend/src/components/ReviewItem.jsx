@@ -62,7 +62,10 @@ function ReviewItem(props) {
           <div className="review-row-header">
             <TextField
               className="edit-restaurant"
-              label="Restaurant Name"
+              label="Eatery Name"
+              inputProps={{
+                maxLength: 40,
+              }}
               name="restaurant"
               onChange={handleChange}
               placeholder="i.e Red Lobster"
@@ -88,6 +91,9 @@ function ReviewItem(props) {
             <TextField
               className="edit-location"
               label="Restaurant Location"
+              inputProps={{
+                maxLength: 40,
+              }}
               name="location"
               onChange={handleChange}
               placeholder="i.e 4120 Yonge St."
@@ -101,6 +107,9 @@ function ReviewItem(props) {
           <div className="review-row-content">
             <TextField
               label="Enter your review here"
+              inputProps={{
+                maxLength: 500,
+              }}
               name="content"
               onChange={handleChange}
               rows={4}

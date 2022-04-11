@@ -84,6 +84,9 @@ function ReviewForm() {
               <div className="form-top-row">
                 <TextField
                   label="Eatery Name"
+                  inputProps={{
+                    maxLength: 40,
+                  }}
                   name="restaurant"
                   onChange={handleChange}
                   placeholder="i.e Red Lobster"
@@ -122,6 +125,9 @@ function ReviewForm() {
               </div>
               <TextField
                 label="Enter your review here"
+                inputProps={{
+                  maxLength: 500,
+                }}
                 name="content"
                 onChange={handleChange}
                 variant="outlined"
@@ -154,6 +160,9 @@ function ReviewForm() {
                 </FormControl>
                 <TextField
                   label="Restaurant Location"
+                  inputProps={{
+                    maxLength: 40,
+                  }}
                   name="location"
                   onChange={handleChange}
                   placeholder="i.e 4120 Yonge St."

@@ -76,6 +76,9 @@ function Register() {
         <div className="login-form-group">
           <TextField
             label="Name"
+            inputProps={{
+              maxLength: 50,
+            }}
             name="name"
             onChange={handleChange}
             size="small"
