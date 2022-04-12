@@ -3,7 +3,6 @@
 A MERN-stack fullstack app that tracks eateries
 
 <img src="https://github.com/Farhan-Nazeer/ChewReview/blob/main/frontend/public/images/img1.png" alt="img1" height="75%" width="75%">
-<img src="https://github.com/Farhan-Nazeer/ChewReview/blob/main/frontend/public/images/img2.png" alt="img2" height="75%" width="75%">
 <img src="https://github.com/Farhan-Nazeer/ChewReview/blob/main/frontend/public/images/img3.png" alt="img3" height="75%" width="75%">
   
 ## Backend
