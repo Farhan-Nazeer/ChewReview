@@ -7,7 +7,7 @@ A MERN-stack fullstack app that tracks eateries - https://chewreview.herokuapp.c
   
 ## Backend
 
-Implements authentication using JWT, sessions, and tokenization to protect API routes in Node.js
+Implements authentication using JWT, sessions, tokenization, and bcrypt to protect API routes in Node.js
 
 <img src="https://github.com/Farhan-Nazeer/ChewReview/blob/main/frontend/public/images/img6.png" alt="img6">
 
